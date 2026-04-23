@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: student-grievance-system
+    env: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: MONGO_URI
+        value: mongodb+srv://abhay2428cseaiml183_db_user:Abhay67890@mse2.1g5scmb.mongodb.net/student_grievance_db?appName=MSE2
+      - key: JWT_SECRET
+        value: supersecretkey_for_jwt_2026
+      - key: NODE_ENV
+        value: production
