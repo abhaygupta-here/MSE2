@@ -12,7 +12,7 @@ const Dashboard = () => {
 
   const fetchGrievances = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/grievances');
+      const res = await axios.get('/api/grievances');
       setGrievances(res.data);
     } catch (err) {
       console.error(err);
@@ -30,7 +30,7 @@ const Dashboard = () => {
       return;
     }
     try {
-      const res = await axios.get(`http://localhost:5000/api/grievances/search?title=${searchTerm}`);
+      const res = await axios.get(`/api/grievances/search?title=${searchTerm}`);
       setGrievances(res.data);
     } catch (err) {
       console.error(err);
@@ -45,7 +45,7 @@ const Dashboard = () => {
   const handleDelete = async (id) => {
     if(window.confirm('Are you sure you want to delete this grievance?')) {
       try {
-        await axios.delete(`http://localhost:5000/api/grievances/${id}`);
+        await axios.delete(`/api/grievances/${id}`);
         fetchGrievances();
       } catch (err) {
         console.error(err);

@@ -28,9 +28,9 @@ const GrievanceForm = ({ fetchGrievances, closeForm, editingGrievance }) => {
     e.preventDefault();
     try {
       if (editingGrievance) {
-        await axios.put(`http://localhost:5000/api/grievances/${editingGrievance._id}`, formData);
+        await axios.put(`/api/grievances/${editingGrievance._id}`, formData);
       } else {
-        await axios.post('http://localhost:5000/api/grievances', formData);
+        await axios.post('/api/grievances', formData);
       }
       fetchGrievances();
       closeForm();
